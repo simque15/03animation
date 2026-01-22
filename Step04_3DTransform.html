@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .wrapper{
+        /* 컨텐츠와 내 시선사이의 거리 */
+        perspective: 500px;
+        /* wrapper에서의 시선의 위치 좌우 */
+        perspective-origin: 50% 50%;
+        border: 1px solid blue;
+    }
+    .target{
+        /* 3d선언 */
+        transform-style: preserve-3d;
+        /* target에서 x축 y축 z축이 만나는 위치 - 회전의 시작을 정할 수 있음 */
+        transform-origin: 50% 50%;
+        width: 200px;
+        border: 1px solid green;
+        margin: 0 auto;
+        transition: transform 0.4s ease-out;
+    } 
+    #one:hover {
+        transform: rotateX(45deg);
+    }
+    #two:hover {
+        transform: rotateY(45deg);
+    }
+    #three:hover {
+        transform: rotateZ(45deg);
+    }
+</style>
+
+<body>
+    <div class="wrapper">
+        <div class="target" id="one">
+            <img src="./images/icon01.png" />
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="target" id="two">
+            <img src="./images/icon02.png" />
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="target" id="three">
+            <img src="./images/icon03.png" />
+        </div>
+    </div>
+</body>
+</html>

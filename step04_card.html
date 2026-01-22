@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .wrapper{
+        width: 400px;
+        height: 400px;
+        margin: 0 auto;
+
+         /* 컨텐츠와 내 시선사이의 거리 */
+        perspective: 500px;
+        /* wrapper에서의 시선의 위치 좌우 */
+        perspective-origin: 50% 50%;
+    }
+    .target{
+        position: relative;
+
+        transform-style: preserve-3d;
+        /* target에서 x축 y축 z축이 만나는 위치 - 회전의 시작을 정할 수 있음 */
+        transform-origin: 50% 50%;
+        transition: transform 0.4s ease-out;
+    }
+    .target > div {
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        border: 1px solid gray;
+        /* 뒤면을 없애준다 */
+        backface-visibility: hidden;
+    }
+    .front{
+        background-image: url(./images/icon01.png);
+    }
+    .back{
+        background-image: url(./images/icon02.png);
+        transform: rotateY(180deg);
+    }
+    .wrapper:hover .target{
+        transform: rotateY(180deg);
+    }
+</style>
+<body>
+    <div class="wrapper">
+        <div class="target">
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+    </div>
+</body>
+</html>
